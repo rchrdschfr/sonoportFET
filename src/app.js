@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // capture the first acceleration to use as a base to determine the new playback rate
           if (typeof baseAcceleration === 'undefined') baseAcceleration = netAcceleration;
 
-          var newPlaybackRate = (netAcceleration/(baseAcceleration).toFixed(2)); // only use 1 significant digit
+          var newPlaybackRate = (netAcceleration/(baseAcceleration)).toFixed(2); // only use 1 significant digit
           
           audioSource.playbackRate.value = newPlaybackRate;
           reindeer.set('fps', newPlaybackRate*baseFps);

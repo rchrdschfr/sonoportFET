@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // load the animation
         var reindeerElement = document.querySelector(reindeerSelector);
         baseFps = (numFrames/parseInt(buffer.duration));
+        console.log(baseFps);
         reindeer = new Motio(reindeerElement, {
           fps: baseFps,
           frames: numFrames
@@ -85,6 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
           
           audioSource.playbackRate.value = newPlaybackRate;
           reindeer.set('fps', newPlaybackRate*baseFps);
+          
+          document.getElementById('playbackRate').innerHTML = newPlaybackRate;
+          document.getElementById('fps').innerHTML = newPlaybackRate*baseFps;
         }
       }  
     });
